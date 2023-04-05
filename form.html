@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Page for Task Manager using Bootstrap with form input validation</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+        <script>
+            function validateInputs(){
+            
+            
+            var c = 0;
+
+            if(document.getElementById("title").value == ""){
+                alert("Please add a title");
+                c++;
+            }
+            if(document.getElementById("description").value == ""){
+                alert("Please add a description");
+                c++;
+            }
+            if(document.getElementById("category").value == ""){
+                alert("Please add a category");
+                c++;
+            }
+            if(document.getElementById("priority").value == ""){
+                alert("Please add a priority level");
+                c++;
+            }
+            if(document.getElementById("progress").value == ""){
+                alert("Please add a progress level");
+                c++;
+            }
+            if (c == 0){
+                alert ("All inputs accepted. Thank you.");
+                document.getElementById("myform").reset();
+
+            }
+
+            }
+
+         </script>
+
+
+    </head>
+    
+    <body>
+       
+       <div class="container">
+            <form name="myform">
+
+                <div class="form-group">
+                    <label>Title</label><br>
+                    <input type="text" class="form-control" id="title">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label><br>
+                    <textarea rows="3" class="form-control" id="description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label><br>
+                    <input type="text" class="form-control" id="category">
+                </div>
+
+                <div class="form-group">
+                    <label>Priority Level</label><br>
+                <select class="form-control" id="priority">
+                        <option value="" >Select an item</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Progress Level</label><br>
+                <select class="form-control" id="progress">
+                        <option value="" >Select an item</option>
+                        <option value="pending">Pending</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                </select>
+                </div>
+
+                <button class="btn btn-primary" type="submit" onclick="validateInputs(); return false;">Submit</button>
+
+            </form>
+       </div>
+       
+       
+       
+       
+       
+       
+       
+        <!--
+
+       <form action=""> 
+            Title: <br>
+            <input type="text"><br><br>
+            Description: <br>
+            <input type="text"><br><br>
+            Category: <br>
+            <input type="text"><br><br>
+            Priority Level: <br>
+            <select name="priority" id="priority1">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select> <br><br>
+            Progress Level: <br>
+            <select name="progress" id="progress1">
+                <option value="pending">Pending</option>
+                <option value="in-progress">In Progress</option>
+                <option value="completed">Completed</option>
+            </select><br><br>
+            <input type="submit">
+
+        </form>
+
+         -->
+    </body>
+</html>
